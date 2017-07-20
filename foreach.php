@@ -4,8 +4,8 @@ $things = array('Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, 
 
 foreach ($things as $item){
 
-// 	if (is_array($item)) {
-// 		echo "$item is an array" . PHP_EOL;
+	//if (is_array($item)) {
+ 	 	//echo "$item is an array" . PHP_EOL;
 // 	}
 
 // 		else if (is_int($item)) {
@@ -32,6 +32,9 @@ foreach ($things as $item){
 	// }
 
 
+		if (is_array($item)) {
+			echo "$item" . PHP_EOL;
+		}
 
 }
 
