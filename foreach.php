@@ -2,10 +2,23 @@
 
 $things = array('Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, (string) 11);
 
-foreach ($things as $thing){
-	echo "The array is " . $thing . PHP_EOL;
+foreach ($things as $item){
 
-	// if (is_array()) {
-	// 	echo 
-	// }
+	if (is_array($item)) {
+		echo "The array $item" . PHP_EOL;
+	}
+
+		else if (is_int($item)) {
+				echo "$item are numbers" . PHP_EOL;
+		} 
+
+		else if (is_float($item)) {
+		  	echo "$item is a float" . PHP_EOL;
+		}
+
+		else if (is_bool($item)) {
+		echo "$item is boolean" . PHP_EOL;
+		}
+
+		else if
 }
