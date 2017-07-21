@@ -23,14 +23,14 @@ $books = array(
     )
 );
 
-foreach($books as $book) {
+foreach($books as $key => $book) {
 	echo "======================" . PHP_EOL;
-
-	foreach($books as $key => $value) {
-		echo "$book" . PHP_EOL;
-	}
+	echo "$key" . PHP_EOL;
 
 	foreach($book as $key => $attribute) {
-		echo "{$key} is {$attribute}" . PHP_EOL;
+	 	if ($book['published'] > 1950){
+	 		echo "{$key}: {$attribute}" . PHP_EOL;
+	 	}
 	}
+	
 }
