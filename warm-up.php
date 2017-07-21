@@ -19,8 +19,8 @@ foreach ($testArray as $item){
 		
 		} if ($item % 2 == 0) {
 		 	 $result *= $item;
-		}
-		else ($item % 2 == 0) {
+		 	 
+		} else ($item % 2 == 0) {
 		 	$result += $item;
 		}
 	}
