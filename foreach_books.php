@@ -20,6 +20,11 @@ $books = array(
         'published' => 1859,
         'author' => 'Charles Dickens',
         'pages' => 544
+    ),
+      'Lord of the Rings' => array(
+        'published' => 1968,
+        'author' => 'J. R. R. Tolkien',
+        'pages' => 1178
     )
 );
 
@@ -28,7 +33,7 @@ foreach($books as $key => $book) {
 	echo "$key" . PHP_EOL;
 
 	foreach($book as $key => $attribute) {
-	 	if ($book['published'] > 1950){
+	 	if ($book['pages'] < 300){
 	 		echo "{$key}: {$attribute}" . PHP_EOL;
 	 	}
 	}
