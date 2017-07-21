@@ -28,9 +28,20 @@ $books = array(
     )
 );
 
+
+
 foreach($books as $key => $book) {
+	// $countBooks = count($book);
+	// echo "Total books is $countBooks" . PHP_EOL;
+	// $pageSum = array_sum($books['pages']);
+	// $pageAverage = $pageSum/$countBooks;
+
+	// $publishedSum = array_sum($books['published']);
+	// $pubAverage = $publishedSum/$countBooks;
+
 	echo "======================" . PHP_EOL;
 	echo "$key" . PHP_EOL;
+
 
 	foreach($book as $key => $attribute) {
 	 	if ($book['pages'] < 300){
