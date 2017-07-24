@@ -11,8 +11,9 @@ function inspect($var)
 			return "$var is an empty array." . PHP_EOL;
 		} else {
 			return "$var is an array " . PHP_EOL;
+			print_r ($var) . PHP_EOL;
 		}
-		
+
 	} elseif (is_bool($var)){
 		if ($var == true) {
 			return "$var is True" . PHP_EOL;
@@ -26,7 +27,12 @@ function inspect($var)
 			return "$var is a string" . PHP_EOL;
 		}
 	} elseif (is_numeric($var)) {
-		return "The value is $var" . PHP_EOL;
+		if (is_int($var)){
+			return "The integer is $var" . PHP_EOL;
+		} elseif (is_float($var)) {
+			return "The floatval is $var" . PHP_EOL;
+		}
+		
 	}
 }
 
