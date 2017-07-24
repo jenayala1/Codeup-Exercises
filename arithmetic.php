@@ -6,9 +6,9 @@ $b = 25;
 function inputsAreNumeric($a, $b) {
 // ====== // Add code here // =========== //
 	if (is_numeric($a) && is_numeric($b)) {
-		echo true;
+		echo true . PHP_EOL;
 	} else {
-		echo false;
+		echo false . PHP_EOL;
 	}
 }
 
