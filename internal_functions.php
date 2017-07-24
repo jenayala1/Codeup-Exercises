@@ -1,8 +1,35 @@
 <?php
 
 // TODO: Create your inspect() function here
+$var = get_defined_vars();
 
+function inspect($var)
+{
 
+	if (is_null($var)) {
+		return "The value is null" . PHP_EOL;
+	} elseif (is_array($var)) {
+		if(empty($var)) {
+			return "The value is an empty array." . PHP_EOL;
+		} else{
+			return "The value is an array " . PHP_EOL;
+		}
+		
+	} elseif (is_bool($var)){
+		if(is_true($var)) {
+			return "True" . PHP_EOL;
+		} else
+		return "Is False" . PHP_EOL; 
+
+	} elseif (is_string($var)) {
+		if(empty($var)){
+			return "The string is empty" . PHP_EOL;
+		} else {
+
+		}
+	}
+}
+echo inpect($var) . PHP_EOL;
 
 // Do not mofify these variables!
 $string1 = "I'm a little teapot";
