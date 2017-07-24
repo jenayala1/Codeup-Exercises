@@ -1,4 +1,6 @@
 <?php
+
+//========== INSTRUCTOR SOLUTION ======================
 // ==== STEP #1 - 
 //Download technology-companies file to exercises directory:
 
@@ -50,34 +52,38 @@ $companies = [
 
 // ==== STEP #2 ====
 //Add code to output the $companies array in its current form.
-// print_r($companies);
+print_r($companies);
 
 // ==== STEP #3 ====
 //Sort the $companies array by company name and output the results.
- // ksort($companies);
- // print_r($companies);
+ksort($companies);
+print_r($companies);
 
 // ==== STEP #4 ====
 //Sort the people in each company alphabetically. 
 //Use a foreach loop and will need to reassign each inner array after sorting. Output the result.
-// foreach ($companies as $company => $people) {
-//     natsort($people);
-//     sort($people);
-//     print_r($company) . print_r($people);
-// }
+foreach ($companies as $key => $company) {  
+    asort($company);
+    $companies[$key] = $company;
+    print_r($company) . print_r($people);
+}
 
-//Instructor Solution
-// foreach ($companies as $key => $company) {  
-//     asort($company);
-//     $companies[$key] = $company;
-//     print_r($companies);
-// }
-
+//to set
 
 // ==== STEP #5 ====
 //Sort the companies from "biggest" to "smallest". This may be easier than you think, but be sure you don't loose the company names!
-arsort($companies);
-print_r($companies);
+arsort($companies);  
+print_r($company);
 
 
 
+//Alternative lesson notes on todos:
+$todos = [
+    'todo1' => 'take out trash',
+    'todo2' => 'do the dishes'
+];
+
+foreach($todos as $key => $todo) {
+    $todo[$key] = ucfirst($todo); //$todo is a copy of $todos[$key]   
+}
+print_r($todos);
