@@ -16,13 +16,13 @@ function add($a, $b) {
 // ====== // Add code here // =========== //
   	if (is_numeric($a) && is_numeric($b)) {
   		return $a + $b;
-		echo $a + $b . PHP_EOL;
+		
 	} else {
 		return "Input must be numeric";
-		echo "Inputs must be numeric" . PHP_EOL;
+	
 	}
 }
-
+echo add($a, $b);
 
 function subtract($a, $b) {
 // ====== // Add code here // =========== //
