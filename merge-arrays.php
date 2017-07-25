@@ -21,7 +21,7 @@ function combineArrays($name, $compare)
 {
  	foreach($names as $value)
  	{
-
+ 		
  		if ($names[$value] === $compare[$value]){
  			array_push($newArray, $value);
 
