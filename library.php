@@ -82,13 +82,22 @@ return $result;
 echo reverse('Today', 'is', 'Tuesday') . PHP_EOL;
 
 
-
 //Write a function called "random" that takes in an input that can be either a string or an array. 
 //function should return a random element or character from the input.
-function random(){
+function random($var){
+	if(is_string($var)) {
+		$array = explode(', ', $var);
+		$result = rsort($array);
 
+		} elseif (is_array($var)) {
+	
+			$result = shuffle($var);
+		}
 
+return $result;
 }
+echo reverse('Today', 'is', 'Tuesday') . PHP_EOL;
+
 
 
 

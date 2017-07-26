@@ -22,7 +22,7 @@ echo $keepsTheDocsAway;
 
 print_r($foods);
 
-//array_pop()
+//array_pop() remove from end of array
 $carbs = array_pop($foods);
 echo $carbs . PHP_EOL;
 
@@ -44,6 +44,14 @@ print_r($foods);
 
 //array push - if value doesn't matter when adding to the array
 array_push($foods, 'honey oat bread'); //will just add as index [0], does not affect associative keys
+print_r($foods);
+
+
+//array push example #2
+$appendArray = ['dairy' => "milk"];
+$foods = $foods + appendArray;
+//or: $foods += $appendArray;
+
 print_r($foods);
 
 //combine associative arrays
