@@ -3,22 +3,20 @@
 // ===# Make your own PHP library of helpful functions! Make a file called library.php == //
 
 // Write a function called isEven that takes in a variable and returns true or false if the provided input is evenly divisible by two or not.
-function isEven($number){
-
-	if (is_numeric($number)) {
-		return $number % 2 == 0;
-	} else {
-		return false;
+function isEven($input)
+{
+	if(is_numeric($input)) {
+		return $input % 2 === 0; //returns true
 	}
+	return false; //else returns false if input is not even
 }
-var_dump(isEven(25));
-//===============================================================
-// - !!! COME BACK TO, NOT EVALUATING THE LETTER !!!
+
 //Write a function called isVowel that returns true or false if the provided input is the letter 'a', 'e', 'i', 'o', or 'u'
 function isVowel($input)
 {
+
 	if(!is_string($input) && count($input) == 1) {//number of characters
-	return false;
+		return false;
 	}	
 
 	$input = strtolower($input);
@@ -29,61 +27,46 @@ function isVowel($input)
 		return false;
 	}
 }
-var_dump(isVowel("o")); 
 
 //Write a function called "first" that takes in an argument that could be an array or a string. 
 //Return the first character if the argument is a string. 
 //Return the first element of the array if the input is an array.
-function first($var){
-		if(is_string($var)) {
-			$result = substr($var, 0, 1);
-
-		} elseif (is_array($var)) {
-			$result = $var[0];
-		}
-	return $result;
+function first($input)
+{
+	if(is_string($input) || is_array($input)) {
+		return $input[0];
+	}
 }
-var_dump(first('Today is Tuesday'));
 
 //Write a function called "second" that takes in input that could be an array or a string. 
-//The function should return the second character or element of the input.
-function second($var){
-	if(is_string($var)) {
-		$result = substr($var, 1, 1);
-
-		} elseif (is_array($var)) {
-			$result = $var[1];
-		}
-return $result;
+//The function should return the second character or element of the input. 
+function second($input)
+{
+	if(is_string($input) || is_array($input)) {
+		return $input[1];
+	}
 }
-var_dump(second('Today is Tuesday'));
-
 //Write a function called "last" that takes in an input that could be an array or a string. 
 //function should return the last character or element of the input.
-function last($var){
-	if(is_string($var)) {
-			$result = substr($var, -1, 1);
-
-			} elseif (is_array($var)) {
-				$result = end($var);
-			}
-return $result;
+function last($input){
+	if(is_string($input) {
+		return $input[(strln($input)-1)];
+	}
+	if (is_array($input)) {
+		return $input[(count($input)-1)];
 }
-var_dump(last(['Today', 'is', 'Tuesday'])); 
-
 
 //Write a function called "reverse" that takes in an input of either a string or an array. 
 // function should return the elements or characters in reverse order.
-function reverse($var){
-	if(is_string($var)) {
-		return strrev($var);
-	} 
-	if (is_array($var)) {
-		return  array_reverse($var);
+function reverse($input)
+{
+	if(is_string($input)) {
+		return strrev($input);
 	}
-
+	if(is_array($input)) {
+		return array_reverse($input);
+	}
 }
-var_dump(reverse('Today', 'is', 'Tuesday'));
 
 
 //Write a function called "random" that takes in an input that can be either a string or an array. 
@@ -99,8 +82,6 @@ function random($input)
 		return $input[$key];
 	}
 }
-var_dump(random('Today', 'is', 'Tuesday')); 
-
 
 
 

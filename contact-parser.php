@@ -11,6 +11,8 @@ $contents = fread($handle, filesize($filename));
 $contents = trim($contents); 
 $contacts = explode("\n", $contents);
 
+$arrayTwo = [];
+
 	foreach ($contacts as $name) {	
 		
 	}
