@@ -18,9 +18,8 @@ var_dump(isEven(25));
 function isVowel($input)
 {
 	if(!is_string($input) && count($input) == 1) {//number of characters
-	return false;
+		return false;
 	}	
-
 	$input = strtolower($input);
 
 	if($input === 'a' || $input === 'e' || $input === 'i' || $input === 'o' || $input === 'u') {
@@ -29,7 +28,7 @@ function isVowel($input)
 		return false;
 	}
 }
-var_dump(isVowel("o")); 
+var_dump(isVowel("b")); 
 
 //Write a function called "first" that takes in an argument that could be an array or a string. 
 //Return the first character if the argument is a string. 
@@ -99,7 +98,7 @@ function random($input)
 		return $input[$key];
 	}
 }
-var_dump(random('Today', 'is', 'Tuesday')); 
+var_dump(random("Time to Go")); 
 
 
 
