@@ -24,7 +24,7 @@ function write($filename, $stringToWrite)
 // 	$date = date("YYYY-MM-DD");
 // 	$time = time("YYYY-MM-DD HH:MM:SS");
 // 	//date_add($date, date_interval_create_from_date_string('PT10H30S'));
-// 	$filename = "log-YYYY-MM-DD.log";
+// 	$filename = "log-" . date('Y-m-d) . ".log";
 
 // 	$handle = fopen($filename, 'a');
 // 	fwrite($handle, $message);
