@@ -90,7 +90,7 @@ var_dump(reverse('Today', 'is', 'Tuesday'));
 function random($input)
 {
 	if(is_string($input)){
-		$randomIndex = mt_rand(0, strlen($input)-1);
+		$randomIndex = mt_rand(0, strlen($input) -1);
 		return $input[$randomIndex];
 	}
 	if(is_array($input)){
