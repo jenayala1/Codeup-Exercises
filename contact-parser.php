@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 function parseContacts($contents){
 $filename = 'contacts.txt';
 $handle = fopen($filename, 'r');

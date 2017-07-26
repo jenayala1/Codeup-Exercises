@@ -2,14 +2,53 @@
 
 
 // ===== STEP #1: Save the file logger.php to your exercises directory. ===
-
-function logMessage($logLevel, $message)
+function write($filename, $stringToWrite)
 {
-    // todo - complete this function
+	$handle = fopen($filename, 'a');
+	fwrite($handle, $stringToWrite);
+	fclose($handle);
+
+	$filename = "log-YYYY-MM-DD";
+	$date = date("YYYY-MM-DD");
+	append($filename, $date . PHP_EOL);
 }
 
-logMessage("INFO", "This is an info message.");
-logMessage("ERROR", "This is an info message.");
+
+
+
+
+// function logMessage($logLevel, $message)
+// {
+//     // todo - complete this function
+	
+// 	$date = date("YYYY-MM-DD");
+// 	$time = time("YYYY-MM-DD HH:MM:SS");
+// 	//date_add($date, date_interval_create_from_date_string('PT10H30S'));
+// 	$filename = "log-YYYY-MM-DD.log";
+
+// 	$handle = fopen($filename, 'a');
+// 	fwrite($handle, $message);
+// 	fclose($handle);
+
+	
+	// $logLevel = [];
+	// $message = [];
+
+	// if ($logLevel === "INFO") {
+	// 	date_add($date, date_interval_create_from_date_string('CT10H30S'));
+	// 	return $date = $date->format("YYYY-MM-DD HH:MM:SS") . "$logLevel: " . " $message" . PHP_EOL;
+	// }
+
+	// if ($logLevel === "ERROR") {
+	// 	date_add($date, date_interval_create_from_date_string('CT10H30S'));
+	// 	return $date = $date->format("YYYY-MM-DD HH:MM:SS") . "$logLevel: " . " $message" . PHP_EOL;
+	// }
+
+//}
+echo $filename;
+//logMessage("INFO", "This is an info message");
+// logMessage("INFO", "This is an info message.");
+// logMessage("ERROR", "This is an info message.");
 
 
 
@@ -29,3 +68,7 @@ logMessage("ERROR", "This is an info message.");
 
 // ===== STEP $3: Add logInfo() and logError() functions that call logMessage(), 
 // passing the appropriate log level values. Replace the calls to logMessage() with calls to the new functions you just created.
+
+
+//fclose($handle);
+
