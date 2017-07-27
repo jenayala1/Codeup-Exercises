@@ -1,23 +1,37 @@
 <?php
 
-function parseContacts($contents){
-$filename = 'contacts.txt';
-$handle = fopen($filename, 'r');
+function parseContacts($filename)
+{
+	$contacts = array();
+	$filename = 'contacts.txt';
+	$handle = fopen($filename, 'r');	
+	$contents = trim(fread($handle, filesize($filename))); 
+	$contacts = explode("\n", $contents);
 
-$contents = fread($handle, filesize($filename));	
-$contents = trim($contents); 
-$contacts = explode("\n", $contents);
+	$arrayTwo = [];
 
-$arrayTwo = [];
+	foreach ($contacts as $key => $contact) 
+	{	
+		$nameArray = explode("|", $contact);
 
-	foreach ($contacts as $name) {	
-		
+		$phnumber = substr($nameArray[1],0,3);
+		$phnumber .= "-";
+		$phnumber .= substr($nameArray[1],3,3);
+		$phnumber .= "-";
+		$phnumber .= substr($nameArray[1],6);
+
+		$name = $nameArray[0];
+
+		$arrayTwo[$key] = [
+			"name" => $name,
+			"number" => $phnumber 
+		];
+
 	}
-
-	return $contacts;
+$contacts = $arrayTwo;
+return $contacts;
 }
 
-var_dump(parseContacts($contents));
+var_dump(parseContacts('contacts.txt'));
+//fclose($handle);
 
-
-fclose($handle);
