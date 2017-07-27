@@ -1,6 +1,37 @@
 <?php
 
+function bonusParser($filename)
+{
+	$people = array();
+	$filename = 'bonus.txt';
+	$handle = fopen($filename, 'r');	
+	$contents = trim(fread($handle, filesize($filename))); 
+	$people = explode("\n", $contents);
 
+	$arrayTwo = [];
+
+	foreach ($people as $key => $person) 
+	{	
+		$peopleArray = explode("/", $people);
+
+		$age = substr($peopleArray[1],0,2);
+		$states = substr($peopleArray[2],0);
+		$
+
+		$name = $peopleArray[0];
+
+		$arrayTwo[$key] = [
+			"name" => $name,
+			"age" => $age,
+			"states" => $states
+		];
+
+	}
+$people = $arrayTwo;
+return $people;
+}
+
+var_dump(bonusParser('bonus.txt'));
 
 
 

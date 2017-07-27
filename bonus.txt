@@ -1,0 +1,3 @@
+John Conner/32/CA,TX,MT/false
+Sara Conner/50/CA,TX/false
+Terminator/3/CA,TX,MT,SC,SD,TN,VT/true
