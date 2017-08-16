@@ -16,9 +16,12 @@ class Square extends Rectangle
 		parent::__construct($height, $width);
 	}
 
+	
+
+
 	public function perimeter()
 	{
-		return ( 2 * ($this->height)) + (2 * ($this->width));
+		return $this->getHeight() * 4;
 	}
 
 }
