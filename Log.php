@@ -2,14 +2,19 @@
 
 class Log
 {
-	public $filename;
-	public $handle;
+	private $filename;
+	private $handle;
 	public $prefix;
 
 
 	public function __construct($prefix="log")
 	{
-		$this->prefix = $prefix;
+		if(is_string($prefix)) {
+			$prefix = 'log';
+		}
+
+		$this->$filename = $prefix . "-" . date('y-m-d') . ".log";
+		$this->$handle = fopen($this->filename, 'a');
 	}
 
 	public function append($filename, $stringToWrite)
@@ -19,13 +24,12 @@ class Log
     	fclose($handle);
 	}
 	
-
-	public function logMessage($logLevel, $message)
+	protected function logMessage($logLevel, $message)
 	{
-		$filename = "log" . date('Y-m-d') . ".log";
-		$stringToWrite = date('Y-m-d H:i:s') . "[" . $logLevel . "]" . $message . PHP_EOL;
-		$this->append($filename, $stringToWrite);
-
+		$timestamp = date("Y-m-d H:i:s");
+		$logEntry = PHP_EOL . "$timestamp - $level - $message";
+		fwrite($this->handle, $logEntry);
+		
 	} 
 
 	public function info($message)
